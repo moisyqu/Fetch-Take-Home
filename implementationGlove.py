@@ -44,8 +44,6 @@ def get_vector(s):
             temp.append(word2vec[elt])
         except:
             temp.append(np.array([1 for i in range(300)]))
-            
-        
     return np.sum(np.array(temp), axis=0)
 
 #%%
@@ -60,12 +58,14 @@ np.save('embedding.npy',embedding)
 #%%
 
 emb = np.load('embedding.npy')
-querry = "Shrimp at walmart"
 
-def search (querry,n):
+#query = "Shrimp at walmart"
+query = input("Enter search querry:")
+
+def search (query,n):
     result = {}
     for i in range(len(emb)):
-        result[i]= round((1 - spatial.distance.cosine(get_vector(querry),emb[i]))*100,2)
+        result[i]= round((1 - spatial.distance.cosine(get_vector(query),emb[i]))*100,2)
         
     sorted_result = sorted(result.items(),reverse=True, key=lambda x:x[1])[:n]
     
@@ -73,6 +73,6 @@ def search (querry,n):
         print(offers[elt[0]]," ",elt[1],"%")
 
 
-sorted_result = search(querry,5)
+sorted_result = search(query,5)
 
 # %%
