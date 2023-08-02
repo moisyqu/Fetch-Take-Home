@@ -1,2 +1,7 @@
 tensorflow
 numpy
+pandas
+txtai
+scipy
+nltk
+django
