@@ -87,19 +87,24 @@ Arber, at Walmart 70.26 %
 
 The web application will use txtAI implementation.
 
-1. Run the pre run to setup the model:
+1. Go to the repo
+```bash
+cd mysite
+```
+   
+2. Run the pre run to setup the model:
    
 ```bash
 python prerun.py
 ```
 
-2. Run the server:
+3. Run the server:
 
 ```bash
 python manage.py runserver
 ```
 
-3. Go to localhost and try a query.
+4. Go to localhost and try a query.
    
 ## Next steps
    
