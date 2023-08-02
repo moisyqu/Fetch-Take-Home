@@ -6,7 +6,7 @@ from txtai.embeddings import Embeddings
 #%%
 
 def main():
-    data = pd.read_csv('../offer_retailer.csv', encoding="latin-1")
+    data = pd.read_csv('../data/offer_retailer.csv', encoding="latin-1")
 
     offers = data['OFFER'].values
 
@@ -22,6 +22,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-# %%
-main()
-# %%

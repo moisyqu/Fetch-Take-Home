@@ -17,7 +17,7 @@ with open (os.path.join("glove.42B.300d/glove.42B.%sd.txt" % 300), encoding="utf
         word2vec[word] =vec   
 #%%
 
-data = pd.read_csv('offer_retailer.csv', encoding="latin-1")
+data = pd.read_csv('data/offer_retailer.csv', encoding="latin-1")
 offers = data['OFFER'].values
 
 #%%
