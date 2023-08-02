@@ -3,12 +3,11 @@
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-Welcome to the Semantic Search Project in Python! This project aims to implement a powerful semantic search engine that can retrieve relevant documents based on the semantic meaning of the user's query. The system leverages natural language processing techniques to understand the context and meaning behind the search terms, enabling more accurate and context-aware search results.
+This project aims to implement a search engine that can retrieve relevant documents based on the semantic meaning of the user's query for Fetch Data Science Take-Home challenge.
 
 ## Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
 - [Installation](#installation)
 - [Usage](#usage)
 - [Examples](#examples)
@@ -17,27 +16,20 @@ Welcome to the Semantic Search Project in Python! This project aims to implement
 
 ## Overview
 
-Semantic search is an advanced search technique that goes beyond traditional keyword-based search methods. It focuses on understanding the intent of the search query and retrieving documents that are contextually relevant, even if they don't contain the exact keywords. This project utilizes Python and various NLP libraries to build a semantic search engine capable of handling a wide range of applications, from information retrieval to chatbots and more.
-
-## Features
-
-- Perform semantic search on a collection of documents.
-- Support for various NLP techniques like word embeddings, sentence embeddings, and more.
-- Easy-to-use interface for querying and retrieving relevant documents.
-- Extensible and customizable architecture for advanced users.
+Semantic search is an advanced search technique. It focuses on understanding the intent of the search query and retrieving documents that are contextually relevant. This project will implement two solutions building a  search engine along with a web app for a visualization.
 
 ## Installation
 
-To get started with the Semantic Search Project, follow these steps:
+To get started with the project, follow these steps:
 
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/your-username/semantic-search-project.git
-cd semantic-search-project
+git clone https://github.com/moisyqu/Fetch-Take-Home.git
+cd Fetch-Take-Home
 ```
 
-2. Set up a virtual environment (optional but recommended):
+2. Set up a virtual environment (recommended):
 
 ```bash
 python3 -m venv venv
@@ -52,9 +44,11 @@ pip install -r requirements.txt
 
 ## Usage
 
-The project provides an easy-to-use API for semantic search. You can integrate it into your own applications or use it directly from the command line.
+The project provides two APIs for semantic search and Web app.
 
-To perform a semantic search, you need to follow these steps:
+
+
+To perform a semantic search from the first, you need to follow these steps:
 
 1. Prepare a collection of documents or articles in a format supported by the search engine (e.g., JSON, CSV).
 
