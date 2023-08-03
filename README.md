@@ -3,7 +3,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.x-blue.svg)](https://www.python.org/downloads/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-This project aims to implement a search engine that can retrieve relevant documents based of the user's query for Fetch Data Science Take-Home challenge.
+This project aims to implement a search engine that can retrieve relevant documents based of the user's query for Data Science Take-Home challenge.
 
 ## Table of Contents
 
@@ -108,7 +108,7 @@ python manage.py runserver
    
 ## Next steps
    
-   1. Only the offers description are used to provide the result, by knowing the company, the tool can do recommendation to similar product.
+   1. Only the offers description are used to provide the result, by knowing the company, the tool can do recommendation to similar products.
    2. The glove dictionnary used is a global one, to have better result it's better to create your own vocabulary.
    3. There is not correction on the user query which can drastically reduce the perfomance.
 
