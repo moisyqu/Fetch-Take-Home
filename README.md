@@ -50,7 +50,7 @@ This implemenation is based on World2Vec using GLOVE.
 Each offers from offer_retailer.csv are vectorized and projected onto a 2-dimensional plan. These vectors are trained by ensuring words with similar meanings are physically near each other. The closer the distance is the more similar are the words. Be calculating the distance between two points we can see how similar are the words.
 In this case, the user query will be vectorized as well and the distance to each vectorized offers we be calculating. The offers with the smaller distances will be shown.  
 
-1. First download the glove.txt from the drive I shared.
+1. Go to https://nlp.stanford.edu/projects/glove/, download and extract glove.42B.300d.zip.
 
 2. Run the script and input your query:
    
