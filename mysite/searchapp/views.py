@@ -1,6 +1,5 @@
 # Import necessary modules
 from django.shortcuts import render
-from django.db.models import Q
 from txtai.embeddings import Embeddings
 
 
@@ -9,10 +8,10 @@ def default(request):
 
 def searchQuerry(query,n,embeddings):
     searchs = embeddings.search(query, n)
-    tp = []
+    response_list = []
     for elt in searchs:
-        tp.append(elt['text']+" "+str(round(elt['score']*100,2))+"%")
-    return tp
+        response_list.append(elt['text']+" "+str(round(elt['score']*100,2))+"%")
+    return response_list
 
 def search(request):
     results = []

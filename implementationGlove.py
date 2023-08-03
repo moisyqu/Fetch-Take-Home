@@ -1,4 +1,5 @@
 #%%
+#Import libraries
 from scipy import spatial
 import pandas as pd
 import numpy as np
@@ -8,6 +9,7 @@ import re
 from nltk.corpus import stopwords
 
 #%%
+#Import the dictionary
 word2vec = {}
 with open (os.path.join("glove.42B.300d/glove.42B.%sd.txt" % 300), encoding="utf8")as f:
     for line in f:
@@ -16,12 +18,12 @@ with open (os.path.join("glove.42B.300d/glove.42B.%sd.txt" % 300), encoding="utf
         vec = np.asarray(values[1:], dtype="float32")
         word2vec[word] =vec   
 #%%
-
+#Load the data
 data = pd.read_csv('data/offer_retailer.csv', encoding="latin-1")
 offers = data['OFFER'].values
 
 #%%
-
+#Clean the data
 REPLACE_BY_SPACE_RE = re.compile('[(){}\[\]\|$@,;.%:-]')
 STOPWORDS = set(stopwords.words('english'))
 
@@ -32,10 +34,11 @@ def clean_text(text):
         return: modified string
     """
     text = str(text).lower() # lowercase text
-    text = ' '.join(word for word in text.split() if word not in STOPWORDS) # delete stopwors from text
+    text = ' '.join(word for word in text.split() if word not in STOPWORDS) # delete stopwords from text
     text = REPLACE_BY_SPACE_RE.sub('', text) # replace bad characters
     return text.split()
 #%%
+#Vectorized sentence
 def get_vector(s):
     clean_val =  clean_text(s)
     temp=[]
@@ -47,17 +50,22 @@ def get_vector(s):
     return np.sum(np.array(temp), axis=0)
 
 #%%
+#Create embedded model
 embedding = []
 for offer in offers:
     embedding.append(get_vector(offer))
 embedding = np.array(embedding)
 
 #%%
+#Save model
 np.save('embedding.npy',embedding)
 
 #%%
-
+#Load model
 emb = np.load('embedding.npy')
+
+#%%
+#Query test
 
 #query = "Shrimp at walmart"
 query = input("Enter search querry:")
@@ -75,4 +83,3 @@ def search (query,n):
 
 sorted_result = search(query,5)
 
-# %%

@@ -1,11 +1,13 @@
 #%%
+#Import libraries
 import pandas as pd
 from txtai.embeddings import Embeddings
 
 
 #%%
-
+#Main function
 def main():
+    
     data = pd.read_csv('../data/offer_retailer.csv', encoding="latin-1")
 
     offers = data['OFFER'].values
